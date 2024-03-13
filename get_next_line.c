@@ -15,32 +15,32 @@
 
 static char	*copy_to_stash(char *stash, char *buff)
 {
-	char	*res;							//Sonuç karakter dizisini tutacak
+	char	*res;
 
-	res = 0;								//NULL olarak başlatılır
-	if (!stash && buff)						//Stash boşsa ve buff doluysa, buff'ın kopyası alınır.
+	res = 0;
+	if (!stash && buff)
 	{
-		res = ft_strdup(buff); 				//verilen bir karakter dizisinin kopyasını oluşturur ve bu kopyanın bir işaretçisini döndürür.
+		res = ft_strdup(buff);
 		if (!res)
 			return (NULL);
 		return (res);
 	}
-	res = ft_strjoin(stash, buff);			//Eğer stash doluysa veya buff boşsa, stash ile buff birleştirilir.
+	res = ft_strjoin(stash, buff);
 	free_stash(&stash, 0);
 	return (res);
 }
 
 static int	have_nl(char *s)
 {
-	size_t	i;								//Satırda yeni satır karakterinin bulunup bulunmadığını belirlemek için
+	size_t	i;
 
 	if (!s)
 		return (0);
 	i = -1;
 	while (s[++i] != '\0')
-		if (s[i] == '\n')					//Karakter dizisi içinde \n kontrol
-			return (1);						//yeni satır karakteri bulunursa, true
-	return (0);								//yeni satır karakteri bulunamazsa false
+		if (s[i] == '\n')
+			return (1);
+	return (0);
 }
 
 static char	*extract_line(char *stash)

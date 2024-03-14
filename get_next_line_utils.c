@@ -22,8 +22,7 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-char	*ft_strdup(const char *str)			//karakter dizisinin kopyasını oluşturur ve bu kopyayı dinamik olarak oluşturulan bellek alanına yerleştirir.
-{
+char	*ft_strdup(const char *str)
 	size_t	len;
 	char	*dup;
 	int		i;
@@ -39,7 +38,7 @@ char	*ft_strdup(const char *str)			//karakter dizisinin kopyasını oluşturur v
 	return (dup);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)// iki karakter dizisini birleştirmek için
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len1;
 	size_t	len2;
@@ -62,7 +61,7 @@ char	*ft_strjoin(char const *s1, char const *s2)// iki karakter dizisini birleş
 	return (new_str);
 }
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)//karakter dizisinin belirli bir alt dizisini almak için
+char	*ft_substr(char const *str, unsigned int start, size_t len)
 {
 	char	*res;
 	size_t	i;
@@ -89,8 +88,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)//karakter dizis
 	return (res);
 }
 
-void	*free_stash(char **stash, int create_line)//geçici verinin saklandığı bellek alanını serbest bırakmak ve isteğe bağlı olarak bu veriyi döndürmek
-{
+void	*free_stash(char **stash, int create_line)
 	char	*line;
 
 	if (!*stash)
